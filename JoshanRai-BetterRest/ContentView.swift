@@ -9,7 +9,7 @@ import CoreML
 import SwiftUI
 
 struct ContentView: View {
-    init() {
+    init() { // This stuff made with help from: https://stackoverflow.com/questions/56505528/swiftui-update-navigation-bar-title-color
         UITableView.appearance().backgroundColor = .clear
         
         //Use this if NavigationBarTitle is with Large Font
@@ -42,7 +42,7 @@ struct ContentView: View {
                     DatePicker("Enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
                         .foregroundColor(Color.black)
                 } header: {
-                    Text("Your Wakeup Schedule")
+                    Text("Your Wakeup Time")
                         .font(.headline)
                         .padding(5)
                         .background(Color.gray.opacity(0.5))
@@ -91,7 +91,6 @@ struct ContentView: View {
                 }.headerProminence(.increased)
             }
             .navigationTitle("BetterRest")
-            .foregroundColor(.white)
             .background(
                 Image("nightSky")
                     .resizable()
@@ -99,6 +98,7 @@ struct ContentView: View {
                     .ignoresSafeArea()
                     .blur(radius: 3)
             )
+            .foregroundColor(.white)
             /*.toolbar {
                 Button("Calculate", action: calculateBedtime)
             }
